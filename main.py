@@ -2,6 +2,7 @@ from studentid_handler import StudentIDHandler
 from email_handler import send_mail
 import datetime
 
+print('hello world!')
 cur_time = datetime.datetime.today()
 
 t1_start = datetime.datetime(2021, 7, 3, hour=15, minute=10)
