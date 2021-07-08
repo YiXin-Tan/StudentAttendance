@@ -1,0 +1,13 @@
+# import evdev
+#
+# devices = [evdev.InputDevice(path) for path in evdev.list_devices()]
+# for device in devices:
+#     print(device.path, device.name, device.phys)
+
+class BarcodeScanner:
+    def __init__(self):
+        pass
+
+    def scan(self):
+        id = None
+        return id
