@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>StudentAttendanceWebGui</title>
+</head>
+<body>
+    <p>Class start time: {{ start_time }}</p>
+
+    <form action="/" method="POST">
+        <label for="std_id">Std_ID:</label>
+        <input type="text" id="std_id" name="std_id" autofocus>
+        <input type="submit" name="submit">
+    </form>
+
+    <table style="width:100%">
+        <tr>
+            <td>
+                <span><img src="../static/info.png" width="15%" alt="info_pic"></span>
+                <span><b>Tap or Scan Student ID Card</b></span>
+            </td>
+            {% if entry_record %}
+            <td>
+                <span>{% if entry_record.get('status')=='On Time' %}
+                    <img src="../static/tick.png" width="15%" alt="tick_pic">
+                {% elif entry_record.get('status')=='Too Early' or entry_record.get('status')=='Late' %}
+                    <img src="../static/alert.png" width="15%" alt="alert_pic">
+                {% else %}
+                    <img src="../static/cross.png" width="15%" alt="cross_pic">
+                {% endif %}</span>
+                <span><b>{{ entry_record.get('status') }}</b></span>
+                <p>{{ entry_record.get('student_id') }} - {{ entry_record.get('name') }}</p>
+                <p>Entry time: {{ entry_record.get('entry_time') }}</p>
+            </td>
+            {% endif %}
+        </tr>
+    </table>
+</body>
+</html>

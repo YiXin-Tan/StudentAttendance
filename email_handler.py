@@ -14,7 +14,7 @@ def send_mail(start_time, csv_filepath):
 
     body = f'<h5>{class_datetime} Attendance</h5>' \
            f'<p>Innovative Solution developed by:\n2021 CO011A GroupC</p><hr>'
-    filename = 'attendance_list.csv'
+    filename = f'{class_datetime} Attendance List.csv'
 
     message = MIMEMultipart()
     message['Subject'] = f'CO011A Attendance {class_datetime}'

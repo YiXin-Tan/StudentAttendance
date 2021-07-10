@@ -54,7 +54,12 @@ class StudentIDHandler:
                     name = record[1]
                     record[2] = status
         finally:
-            return status, student_id, name, entry_time.strftime('%I:%M:%S %p')
+            entry_record = {'status': status,
+                            'student_id': student_id,
+                            'name': name,
+                            'entry_time': entry_time.strftime('%I:%M:%S %p')}
+            print(f'{entry_record.get("entry_time")} {name}: {status}')
+            return entry_record
 
     def generate_attendance_csv(self):
         class_datetime = self.start_time.strftime('%Y-%m-%d %H-%M')
