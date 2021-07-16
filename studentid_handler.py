@@ -1,5 +1,7 @@
 import csv
 import datetime
+import os
+
 class IdNotFound(Exception):
     """Raised when Student ID can't be found in 'HSC_students.csv'"""
     pass
@@ -71,3 +73,6 @@ class StudentIDHandler:
             for record in self.attendance_list:
                 csv_writer.writerow(record)
         return filepath
+
+def rename_fake_barcode_img():
+    pass
