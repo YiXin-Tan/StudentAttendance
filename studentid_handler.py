@@ -75,4 +75,8 @@ class StudentIDHandler:
         return filepath
 
 def rename_fake_barcode_img():
-    pass
+    for file in os.listdir('./FakeStudentID'):
+        # file: 3_EVA9999.gif
+        # new_file: EVA9999.gif
+        new_file = file[file.find('_') + 1:]
+        os.rename(f'./FakeStudentID/{file}', f'./FakeStudentID/{new_file}')
