@@ -1,3 +1,4 @@
+import os
 import smtplib,ssl
 from email.mime.multipart import MIMEMultipart
 from email.mime.application import MIMEApplication
@@ -9,7 +10,7 @@ def send_mail(start_time, csv_filepath):
     class_datetime = start_time.strftime('%Y-%m-%d %H:%M')
 
     sender_email = 'cacticatocat@gmail.com'
-    sender_pwd = 'cacticat222'
+    sender_pwd = os.environ.get('SMTP_SENDER_PWD')
     receiver_email = 'tulumaw@gmail.com'
 
     body = f'<h5>{class_datetime} Attendance</h5>' \

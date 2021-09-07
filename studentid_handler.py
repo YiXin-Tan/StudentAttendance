@@ -38,7 +38,7 @@ class StudentIDHandler:
             if student_id in self.CO011A_students: # check if student in CO011A
                 if delta_seconds > 600:  # Late: entry_time >10mins
                     status = "Late"
-                elif delta_seconds < -300:  # Too Early: entty_time <5 mins
+                elif delta_seconds < -300:  # Too Early: entry_time <5 mins
                     status = "Too Early"
                 else:
                     status = "On Time"
@@ -73,6 +73,11 @@ class StudentIDHandler:
             for record in self.attendance_list:
                 csv_writer.writerow(record)
         return filepath
+
+# a = student_id_handler.modify_record('WAN0070', t2_cur)  # valid id
+# b = student_id_handler.modify_record('TES0001', t2_cur)  # wrong class
+# c = student_id_handler.modify_record('TES0002', t2_cur)  # id not found
+
 
 def rename_fake_barcode_img():
     for file in os.listdir('./FakeStudentID'):

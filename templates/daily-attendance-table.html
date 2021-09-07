@@ -1,0 +1,29 @@
+{% extends 'layouts.html' %}
+{% block content %}
+
+<h1>Daily Attendance</h1>
+
+<table>
+    <tr>
+        <th style="width: 10%">ID</th>
+        <th style="width: 30%">Name</th>
+        <th style="width: 40%">Status</th>
+    </tr>
+    {% for record in daily_attendance_list %}
+    <tr>
+        <td>{{ record[0] }}</td>
+        <td>{{ record[1] }}</td>
+        {% if record[2]=='On Time' %}
+            <td style="color: green;">{{ record[2] }}</td>
+        {% elif record[2]=='Absent' %}
+            <td style="color: red;">{{ record[2] }}</td>
+        {% elif record[2]=='Late' or record[2]=='Too Early' %}
+            <td style="color: orange;">{{ record[2] }}</td>
+        {% else %}
+            <td>{{ record[2] }}</td>
+        {% endif %}
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock content%}
