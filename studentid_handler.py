@@ -49,7 +49,8 @@ class StudentIDHandler:
         except IdNotFound:
             name = 'N/A'
             status = 'Invalid Student ID'
-            self.attendance_list.append([student_id, name, status])
+            # no need to display when ID is
+            # self.attendance_list.append([student_id, name, status])
         else:
             for record in self.attendance_list:
                 if record[0] == student_id:

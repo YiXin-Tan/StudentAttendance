@@ -5,7 +5,7 @@ from flask import Flask, request, render_template, url_for, redirect, flash
 import os
 
 # too early: <5mins, too late: >10mins
-t1_start = datetime.datetime(2021, 9, 7, hour=20, minute=54)
+t1_start = datetime.datetime(2021, 9, 8, hour=14, minute=46)
 
 
 app = Flask(__name__)
