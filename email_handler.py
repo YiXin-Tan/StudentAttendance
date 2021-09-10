@@ -11,7 +11,9 @@ def send_mail(start_time, csv_filepath):
 
     sender_email = 'cacticatocat@gmail.com'
     sender_pwd = os.environ.get('SMTP_SENDER_PWD')
-    receiver_email = 'tulumaw@gmail.com'
+
+    # Insert email recipient below:
+    receiver_email = 'test@example.com'
 
     body = f'<h5>{class_datetime} Attendance</h5>' \
            f'<p>Innovative Solution developed by:\n2021 CO011A GroupC</p><hr>'
